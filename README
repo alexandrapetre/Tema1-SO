@@ -1,0 +1,62 @@
+Nume: Petre Alexandra Grupă: 335CB
+
+Tema1
+
+	Am ales să implementez HashMap-ul ca un vector de dimensiune fixă, iar
+fiecare camp din vector este o listă de elemente. Funcția de hash întoarce
+un index, iar în funcție de index se adaugă noul câmp în HashMap.
+
+	Pentru parsarea fișierului, am luat fiecare line din fișierul de input
+și am verificat ce tip este. Dacă linia începea cu #define, atunci se adauga
+un câmp nou în hashMap. După ce terminam de citit o linie, o scriam
+în fișierul de output. Pentru cazurile în care întâlneam o variabila (cheia din HashMap)
+o înlocuiam în funția ReplaceToken.
+
+	Pentru parametrii de rulare al temei, am folosit funcții de parsare. Pentru -I
+am folosit un vector de char*, pentru cazurile în care fișierul header se găsește în 
+directorul de inputs sau într-un director din /inputs.
+
+	Consider tema utilă pentru că ne-am obișnuit cu folosirea fișierelor și
+	descriptorilor de fișiere. Util pentru că am recapitulat folosirea 
+	structurilor de date, folosirea de funcții pe string-uri și pointeri.
+	Cred că a fost o temă super migăloasă, care producea super super super ușor
+	un seg fault. 
+
+	Consider o implementare normală, not best not worst. Cred că putea fi mai eficientă
+	și mai bine segmentată. 
+
+
+	Cazuri speciale: 
+		- if-uri imbricate
+		- dacă fișierul de output nu are [-o] în față am folosit o variabilă
+		care îmi numara argumentele care nu începeau cu -, si dacă erau mai mult
+		de 2 întorcea eroare
+		- define multiline, am construit noua valoare în funcție de delimitatori,
+		și aveam o variabila care reținea cheia
+		- Define-uri în care se înlocuiesc mai multe lucruri, pentru fiecare token
+		din #define se verifcă dacă exista cheia în hashMap, dacă da, se întoarce 
+		valoarea, și se scrie in fișierul de output.
+		- #include deschide recursiv fișierele header și adaugă dacă este cazul în hashMap
+
+	Am implementat intregul enunț al temei.
+	Nu merge testul 38, nu merg foarte bine if-urile și ifdef-urile imbricate. (testul 38)
+	Coding style-ul nu este perfect..
+
+	Dificultăți: pe linux mergea tot, inclusiv valgrind, pe Windows aveam 4/95 :).
+Am rezolvat cumva..
+
+Compilare & Executare:
+- pe Linux compliarea cu gcc 
+- pe Windows compliarea cu cl
+- crearea Executabilelor se face cu Makefile
+- se poate executa manual folosit ./so-cpp pe Linux si ./so-cpp.exe pe Windows
+	pentru a rula testele manual puneam și parametrii din fisierele cu extensia 
+	.param
+
+Bibliografie:
+- https://www.geeksforgeeks.org
+-https://stackoverflow.com
+-labul 1 și 2 
+
+
+
